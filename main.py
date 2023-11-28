@@ -7,8 +7,8 @@ key = "secret123"
 # panggil class FastAPI
 app = FastAPI()
 
-# read file csv
-data = pd.read_csv('data.csv')
+# # read file csv
+# data = pd.read_csv('data.csv')
 
 @app.get('/')
 def handler():
@@ -39,10 +39,10 @@ def handler(request: Request):
             "agent": agent # display value 'agent' in response
         }
 
-# merubah data csv menjadi dict/json
-@app.get('/data')
-def handler():
-    return data.to_dict(orient='records')
+# # merubah data csv menjadi dict/json
+# @app.get('/data')
+# def handler():
+#     return data.to_dict(orient='records')
 
 @app.get('/home/{user}')
 def handler(user):
