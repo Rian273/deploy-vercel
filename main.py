@@ -10,8 +10,13 @@ app = FastAPI()
 # read file csv
 data = pd.read_csv('data.csv')
 
-# define url/endpoint
 @app.get('/')
+def handler():
+    return {"message": "hello"}
+
+
+# define url/endpoint
+@app.get('/secret')
 def handler(request: Request):
 
     # retrieve content form request
